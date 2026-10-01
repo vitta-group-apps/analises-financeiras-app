@@ -1,0 +1,10 @@
+{
+  "description": "Analyze real estate investment viability for rentals and Airbnb with comprehensive financial projections, helping property owners make informed decisions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
