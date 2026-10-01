@@ -1,7 +1,7 @@
+import { AnalysisForm } from './components/AnalysisForm'
 import { useState, useCallback } from 'react'
 import Sidebar from './components/Sidebar'
 import Dashboard from './views/Dashboard'
-import AnalysisView from './views/AnalysisView'
 import PropertiesView from './views/PropertiesView'
 import FinancingCalculator from './views/FinancingCalculator'
 import RentalAnalysis from './views/RentalAnalysis'
@@ -183,8 +183,6 @@ export default function App() {
 
   function handleNav(v: View) { setView(v); setSidebarOpen(false) }
 
-  const selectedProperty = properties.find(p => p.id === selectedPropertyId) ?? null
-
   return (
     <div className="flex h-screen overflow-hidden" style={{ background: '#F8F6F1' }}>
       {/* Mobile overlay */}
@@ -252,13 +250,7 @@ export default function App() {
             />
           )}
           {view === 'analysis' && (
-            <AnalysisView
-              analysisId={analysisId}
-              selectedProperty={selectedProperty}
-              properties={properties}
-              onSave={saveAnalysis}
-              onSelectProperty={setSelectedPropertyId}
-            />
+            <AnalysisForm />
           )}
           {view === 'properties' && (
             <PropertiesView
